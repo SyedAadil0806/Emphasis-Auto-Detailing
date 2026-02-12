@@ -19,14 +19,12 @@
   --sectionMuted: rgba(17,17,17,.72);
 
   /* Accent cards + lines */
-  --lav: #DBDCF0;
+  --lav: rgba(0,201,167,.18);
   --lavLine: rgba(0,0,0,.10);
 
-  --accent: #6E72D9;
-  --blue: #4D55D9;
-
-  /* Timeline lines */
-  --timeline: rgba(77,85,217,.35);
+  --accent: #00C9A7;        /* main turquoise button color */
+  --blue: #00BFA6;          /* icon turquoise */
+  --timeline: rgba(0, 201, 167, 0.35);  /* timeline lines */
 }
 
 /* Light theme */
@@ -45,7 +43,7 @@
   --sectionText: #111111;
   --sectionMuted: rgba(17,17,17,.72);
 
-  --lav: #DBDCF0;
+  --lav: rgba(0,201,167,.12);
   --lavLine: rgba(0,0,0,.10);
 
   --timeline: rgba(77,85,217,.35);
@@ -99,13 +97,21 @@ img{ display:block; max-width:100%; }
   align-items:center;
   gap:12px;
   text-decoration:none;
-  min-width: 300px;
+  min-width: auto;
 }
+
+.brand-logo{
+  height: 120px;          /* adjust if needed */
+  width: auto;
+  display:block;
+  object-fit: contain;
+}
+
 .brand-dot{
   width: 14px;
   height: 14px;
   border-radius: 7px;
-  background: linear-gradient(135deg,#2BD4FF,#7C3AED);
+  background: linear-gradient(135deg,#00E6C3,#00A896);
 }
 .brand-text{
   font-weight: 800;
@@ -120,6 +126,10 @@ img{ display:block; max-width:100%; }
   display:flex;
   justify-content:center;
   align-items:center;
+}
+
+.topbar-inner{
+  position: relative;
 }
 
 /* Right actions */
@@ -147,8 +157,12 @@ img{ display:block; max-width:100%; }
 
 /* Quote button */
 .quote-btn{
-  border: 1px solid rgba(180,190,255,.25);
-  background: linear-gradient(180deg, rgba(110,114,217,.55), rgba(110,114,217,.20));
+   border:1px solid rgba(0,201,167,.35);
+  background: linear-gradient(
+    180deg,
+    rgba(0,201,167,.65),
+    rgba(0,201,167,.25)
+  );
   color: #fff;
   padding: 10px 16px;
   border-radius: 999px;
