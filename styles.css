@@ -841,4 +841,40 @@ p{
     padding-left: 35px;
   }
 }
- 
+
+/* =========================================
+   Hide Desktop Paint Layout On Phones Only
+   ========================================= */
+@media (max-width: 720px){
+
+  /* Hide the desktop timeline layout */
+  .paint3,
+  .paint-desktop {
+    display: none !important;
+  }
+
+  /* Show mobile stacked layout */
+  .paint-mobile {
+    display: block !important;
+  }
+
+}
+/* =====================================
+   Better Mobile Text Spacing
+   ===================================== */
+@media (max-width: 720px){
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .split-body,
+  .col,
+  .lav-card,
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+}
