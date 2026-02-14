@@ -878,3 +878,10 @@ p{
   }
 
 }
+
+/* Hide the mobile paint section ONLY on phones */
+@media (max-width: 720px){
+  .paint-mobile-only{
+    display: none !important;
+  }
+}
