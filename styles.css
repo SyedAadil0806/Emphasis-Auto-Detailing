@@ -753,6 +753,63 @@ p{
   }
 }
 
+/* =========================================================
+   ✅ Paint: Desktop vs Mobile switch
+   ========================================================= */
+.paint-desktop { display: block; }
+.paint-mobile { display: none; }
+
+/* Mobile cards layout */
+.paint-mcards{
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.paint-mcard{
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 16px;
+  align-items: start;
+
+  background: var(--cardBg);
+  border: 1px solid var(--cardLine);
+  border-radius: 18px;
+  padding: 18px 16px;
+}
+
+.paint-mnum{
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--sectionText);
+
+  background: rgba(0,201,167,.10);
+  border: 1px solid rgba(0,201,167,.35);
+}
+
+.paint-mtext h3{
+  margin: 2px 0 0;
+  font-size: 24px;
+}
+
+.paint-mtext p{
+  margin-top: 10px;
+}
+
+/* ✅ Switch to MOBILE version only */
+@media (max-width: 720px){
+  .paint-desktop { display: none; }
+  .paint-mobile { display: block; }
+}
+
+
 /* FORCE: hide desktop paint layout on mobile */
 @media (max-width: 920px){
   #paint .paint3,
