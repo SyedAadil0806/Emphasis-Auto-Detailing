@@ -92,7 +92,7 @@ img{ display:block; max-width:100%; }
 .brand{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:12 px;
   text-decoration:none;
 }
 .brand-logo{
@@ -752,3 +752,36 @@ p{
     color: var(--sectionMuted);
   }
 }
+
+/* FORCE: hide desktop paint layout on mobile */
+@media (max-width: 920px){
+  #paint .paint3,
+  section#paint .paint3,
+  .section#paint .paint3{
+    display: none !important;
+  }
+
+  /* If you used a different class name for the desktop paint block, add it here too */
+  /* Example: #paint .paint-desktop{ display:none !important; } */
+}
+
+/* MOBILE: nudge logo left + dropdown right */
+@media (max-width: 560px){
+
+  /* slightly reduce left padding of the whole header */
+  .topbar-inner{
+    padding-left: 10px;   /* was 18px */
+    padding-right: 14px;
+  }
+
+  /* push logo slightly left */
+  .brand{
+    margin-left: -6px;
+  }
+
+  /* push center dropdown slightly right */
+  .nav{
+    padding-left: 10px;
+  }
+}
+ 
