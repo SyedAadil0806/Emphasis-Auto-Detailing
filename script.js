@@ -1,43 +1,73 @@
-// Theme toggle (TOP RIGHT) — whole page + saves preference
-(() => {
-  const body = document.body;
-  const btn = document.getElementById("themeBtn");
+// ---------- Theme Toggle (persist) ----------
+const root = document.documentElement;
+const toggleBtn = document.getElementById("themeToggle");
 
-  const saved = localStorage.getItem("theme");
-  if (saved === "light") {
-    body.classList.remove("theme-dark");
-    body.classList.add("theme-light");
-  } else {
-    body.classList.add("theme-dark");
-  }
+function setTheme(theme) {
+  root.classList.remove("theme-dark", "theme-light");
+  root.classList.add(theme);
+  localStorage.setItem("theme", theme);
+}
 
-  btn?.addEventListener("click", () => {
-    const isLight = body.classList.toggle("theme-light");
-    body.classList.toggle("theme-dark", !isLight);
-    localStorage.setItem("theme", isLight ? "light" : "dark");
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "theme-light" || savedTheme === "theme-dark") {
+  setTheme(savedTheme);
+} else {
+  setTheme("theme-dark"); // default
+}
+
+toggleBtn.addEventListener("click", () => {
+  const next = root.classList.contains("theme-dark") ? "theme-light" : "theme-dark";
+  setTheme(next);
+});
+
+// ---------- Dropdown: hover desktop, tap mobile ----------
+const dropdown = document.getElementById("servicesDropdown");
+const dropbtn = document.getElementById("dropbtn");
+const menu = document.getElementById("dropdownMenu");
+
+function openDropdown() {
+  dropdown.classList.add("open");
+  dropbtn.setAttribute("aria-expanded", "true");
+}
+function closeDropdown() {
+  dropdown.classList.remove("open");
+  dropbtn.setAttribute("aria-expanded", "false");
+}
+
+// Tap/click to toggle (mobile + desktop click support)
+dropbtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (dropdown.classList.contains("open")) closeDropdown();
+  else openDropdown();
+});
+
+// Close when clicking outside
+document.addEventListener("click", (e) => {
+  if (!dropdown.contains(e.target)) closeDropdown();
+});
+
+// Close on escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeDropdown();
+});
+
+// Close after selecting an item + smooth scroll
+menu.querySelectorAll("a").forEach(a => {
+  a.addEventListener("click", () => {
+    closeDropdown();
   });
-})();
+});
 
-// Get a Quote does nothing
-document.getElementById("quoteBtn")?.addEventListener("click", (e) => e.preventDefault());
-document.querySelectorAll(".hero-cta").forEach(btn => btn.addEventListener("click",(e)=>e.preventDefault()));
+// ---------- Reveal animation (once) ----------
+const reveals = document.querySelectorAll(".reveal");
 
-// Reveal animation (first time only)
-(() => {
-  const els = document.querySelectorAll(".reveal");
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: "0px 0px -12% 0px" });
-
-  let i = 0;
-  els.forEach((el) => {
-    el.style.transitionDelay = (i % 10) * 45 + "ms";
-    i++;
-    io.observe(el);
+const io = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("show");
+      obs.unobserve(entry.target); // only once
+    }
   });
-})();
+}, { threshold: 0.18 });
+
+reveals.forEach(el => io.observe(el));

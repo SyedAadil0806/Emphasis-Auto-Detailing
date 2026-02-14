@@ -1,81 +1,100 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="theme-dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Emphasis Auto Detailing</title>
+  <meta name="description" content="Emphasis Mobile Detailing — premium auto detailing services." />
+  <title>Emphasis Mobile Detailing</title>
 
+  <!-- Preload hero image for faster first paint -->
+  <link rel="preload" as="image" href="assets/hero.webp" />
+
+  <!-- Fonts (optional) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body class="theme-dark">
-  <!-- Sticky top nav -->
-  <header class="topbar" id="top">
+<body>
+  <!-- ===== Sticky Topbar ===== -->
+  <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="#top" aria-label="Emphasis Auto Detailing Home">
-  <img class="brand-logo" src="assets/logo.webp" alt="Emphasis Auto Detailing logo">
-</a>
+      <!-- Left: Logo -->
+      <a class="brand" href="#top" aria-label="Go to top">
+        <img class="brand-logo" src="assets/logo.webp" alt="Emphasis Mobile Detailing Logo" width="44" height="44" />
+      </a>
 
-
+      <!-- Center: Dropdown -->
       <nav class="nav" aria-label="Primary">
-        <div class="dropdown">
-          <button class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false">
+        <div class="dropdown" id="servicesDropdown">
+          <button class="dropbtn" id="dropbtn" aria-haspopup="true" aria-expanded="false">
             Our Services <span class="chev" aria-hidden="true">▾</span>
           </button>
 
-          <div class="dropdown-menu" role="menu">
-            <a href="#full-service" role="menuitem">Full Service Detailing</a>
-            <a href="#express" role="menuitem">Express Service</a>
-            <a href="#interior" role="menuitem">Interior</a>
-            <a href="#exterior" role="menuitem">Exterior Detailing</a>
-            <a href="#paint" role="menuitem">Paint Correction</a>
-            <a href="#ceramic" role="menuitem">Ceramic Coating Protection</a>
-            <a href="#schedule" role="menuitem">Scheduling &amp; Pricing</a>
-            <a href="#contact" role="menuitem">Contact</a>
+          <div class="dropdown-menu" id="dropdownMenu" role="menu">
+            <a role="menuitem" href="#full-service">Full Service Detailing</a>
+            <a role="menuitem" href="#express">Express Service</a>
+            <a role="menuitem" href="#interior">Interior</a>
+            <a role="menuitem" href="#exterior">Exterior Detailing</a>
+            <a role="menuitem" href="#paint">Paint Correction</a>
+            <a role="menuitem" href="#ceramic">Ceramic Coating Protection</a>
+            <a role="menuitem" href="#schedule">Scheduling</a>
+            <a role="menuitem" href="#pricing">Pricing</a>
+            <a role="menuitem" href="#contact">Contact</a>
           </div>
         </div>
       </nav>
 
+      <!-- Right: Theme + Quote -->
       <div class="actions">
-        <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle theme" title="Toggle theme">
-          <span class="theme-ic theme-moon" aria-hidden="true">☾</span>
-          <span class="theme-ic theme-sun" aria-hidden="true">☀</span>
+        <button class="theme-btn" id="themeToggle" aria-label="Toggle dark/light theme">
+          <span class="theme-moon" aria-hidden="true">🌙</span>
+          <span class="theme-sun" aria-hidden="true">☀️</span>
         </button>
-        <button class="quote-btn" type="button" id="quoteBtn">Get a Quote</button>
+
+        <button class="quote-btn" type="button">Get a Quote</button>
       </div>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="hero">
+  <!-- ===== HERO ===== -->
+  <main id="top">
+    <section class="hero">
       <div class="hero-left">
-        <div class="hero-copy">
-          <h1 class="reveal">Emphasis Auto Detailing :<br/>Restoring Your Vehicle's Shine</h1>
-          <p class="reveal">Get your car looking its best with our comprehensive auto detailing services.</p>
-          <button class="hero-cta reveal" type="button">Get a Quote</button>
+        <div class="hero-copy reveal">
+          <h1>Emphasis Auto Detailing:<br/>Restoring Your Vehicle's Shine</h1>
+          <p>Get your car looking its best with our comprehensive auto detailing services.</p>
+          <button class="hero-cta" type="button">Get a Quote</button>
         </div>
       </div>
+
       <div class="hero-right">
-        <img src="assets/hero.webp" alt="Hero car" />
+        <!-- Hero image: eager for LCP -->
+        <img
+          src="assets/hero.webp"
+          alt="Premium car detailing hero image"
+          width="1600"
+          height="900"
+          fetchpriority="high"
+          decoding="async"
+        />
       </div>
     </section>
 
-    <!-- FULL SERVICE -->
-    <section class="block section" id="full-service">
-      <div class="container wide">
-        <h2 class="big-title reveal">Full-Service Detailing</h2>
+    <!-- ===== FULL SERVICE ===== -->
+    <section class="section section-dark" id="full-service">
+      <div class="container block reveal">
+        <h2 class="big-title center">Full-Service Detailing</h2>
 
         <div class="two-col">
-          <div class="col reveal">
+          <div class="col">
             <h3>Interior</h3>
             <p>Thorough cleaning of all surfaces, including carpets, seats, dashboard, and door panels. Stain removal, odor elimination, and vacuuming are included.</p>
           </div>
-          <div class="col reveal">
+
+          <div class="col">
             <h3>Exterior</h3>
             <p>Exterior detailing includes a thorough wash, clay bar treatment, paint correction, and wax or sealant. Wheels are cleaned and tires are dressed.</p>
           </div>
@@ -83,110 +102,104 @@
       </div>
     </section>
 
-    <!-- EXPRESS -->
-    <section class="split-section section" id="express">
+    <!-- ===== EXPRESS (Split) ===== -->
+    <section class="split-section section-dark" id="express">
       <div class="split-img">
-        <img src="assets/express.webp" alt="Express detailing car" />
+        <img
+          src="assets/express.webp"
+          alt="Express detailing image"
+          width="1600"
+          height="1200"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-      <div class="split-body">
-        <h2 class="big-title reveal">Express Detailing</h2>
 
-        <div class="lav-card reveal">
+      <div class="split-body reveal">
+        <h2 class="big-title">Express Detailing</h2>
+
+        <div class="lav-card">
           <h3>Interior</h3>
           <p>Quick vacuuming, dashboard wipe down, and glass cleaning.</p>
         </div>
 
-        <div class="lav-card reveal">
+        <div class="lav-card">
           <h3>Exterior</h3>
           <p>Exterior detailing includes a thorough wash, clay bar treatment, paint correction, and wax or sealant. Wheels are cleaned and tires are dressed.</p>
         </div>
       </div>
     </section>
 
-    <!-- INTERIOR -->
-    <section class="split-section section" id="interior">
+    <!-- ===== INTERIOR (Split + Steps) ===== -->
+    <section class="split-section section-dark" id="interior">
       <div class="split-img">
-        <img src="assets/interior.webp" alt="Interior detailing" />
+        <img
+          src="assets/interior.webp"
+          alt="Interior detailing image"
+          width="1600"
+          height="1200"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-      <div class="split-body">
-        <h2 class="big-title reveal">Interior Detailing</h2>
 
-        <div class="step-row reveal">
-          <div class="chevron-badge"><span>1</span></div>
-          <div class="step-copy">
-            <h3>Leather Cleaning and Conditioning</h3>
-            <p>Deep clean and condition your leather seats and upholstery to restore their shine and protect them from future damage.</p>
+      <div class="split-body reveal">
+        <h2 class="big-title">Interior Detailing</h2>
+
+        <div class="steps">
+          <div class="step-row">
+            <div class="step-badge"><span>1</span></div>
+            <div class="step-copy">
+              <h3>Leather Cleaning and Conditioning</h3>
+              <p>Deep clean and condition your leather seats and upholstery to restore their shine and protect them from future damage.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="step-row reveal">
-          <div class="chevron-badge"><span>2</span></div>
-          <div class="step-copy">
-            <h3>Fabric Cleaning and Stain Removal</h3>
-            <p>Remove stains and dirt from your fabric seats and carpets using a specialized cleaning solution and a professional extractor.</p>
+          <div class="step-row">
+            <div class="step-badge"><span>2</span></div>
+            <div class="step-copy">
+              <h3>Fabric Cleaning and Stain Removal</h3>
+              <p>Remove stains and dirt from your fabric seats and carpets using a specialized cleaning solution and a professional extractor.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="step-row reveal">
-          <div class="chevron-badge"><span>3</span></div>
-          <div class="step-copy">
-            <h3>Odor Removal</h3>
-            <p>Eliminate unpleasant odors from your car's interior using a professional ozone machine or deodorizing treatments.</p>
+          <div class="step-row">
+            <div class="step-badge"><span>3</span></div>
+            <div class="step-copy">
+              <h3>Odor Removal</h3>
+              <p>Eliminate unpleasant odors from your car’s interior using a professional ozone machine or deodorizing treatments.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- EXTERIOR -->
-    <section class="block section" id="exterior">
-      <div class="container wide">
-        <h2 class="big-title reveal">Exterior Detailing</h2>
+    <!-- ===== EXTERIOR GRID ===== -->
+    <section class="section section-dark" id="exterior">
+      <div class="container block reveal">
+        <h2 class="big-title">Exterior Detailing</h2>
 
         <div class="icon-grid">
-          <div class="icon-card reveal">
-            <div class="icon blue" aria-hidden="true">
-              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
-                <path d="M10 16c6 0 6 6 12 6s6-6 12-6 6 6 12 6 6-6 8-6"/>
-                <path d="M10 30c6 0 6 6 12 6s6-6 12-6 6 6 12 6 6-6 8-6"/>
-                <path d="M10 44c6 0 6 6 12 6s6-6 12-6 6 6 12 6 6-6 8-6"/>
-              </svg>
-            </div>
+          <div class="icon-card">
+            <div class="icon blue" aria-hidden="true">≋</div>
             <h3>Wash and Rinse</h3>
             <p>A thorough wash using a premium car shampoo and microfiber towels to remove dirt, grime, and debris.</p>
           </div>
 
-          <div class="icon-card reveal">
-            <div class="icon blue" aria-hidden="true">
-              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M26 10l28 28"/>
-                <path d="M18 18l28 28"/>
-                <path d="M14 50c0-10 8-18 18-18"/>
-              </svg>
-            </div>
+          <div class="icon-card">
+            <div class="icon blue" aria-hidden="true">⟐</div>
             <h3>Clay Bar Treatment</h3>
             <p>Removes embedded contaminants from the paint, leaving a smooth and clean surface.</p>
           </div>
 
-          <div class="icon-card reveal">
-            <div class="icon" aria-hidden="true">
-              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M20 44c2 4 7 8 12 8 9 0 16-7 16-16 0-7-5-13-12-15"/>
-                <path d="M24 24c-6 2-10 8-10 14"/>
-              </svg>
-            </div>
+          <div class="icon-card">
+            <div class="icon" aria-hidden="true">○</div>
             <h3>Wax or Sealant</h3>
             <p>Protects the paint from UV rays, scratches, and water damage.</p>
           </div>
 
-          <div class="icon-card reveal">
-            <div class="icon blue" aria-hidden="true">
-              <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="26" cy="38" r="12"/>
-                <path d="M42 22l10-10"/>
-                <path d="M50 12h-8"/>
-                <path d="M52 20v-8"/>
-              </svg>
-            </div>
+          <div class="icon-card">
+            <div class="icon blue" aria-hidden="true">⟳</div>
             <h3>Wheel Cleaning and Tire Dressing</h3>
             <p>Cleans and polishes your wheels, and applies a tire dressing for a shiny and long-lasting finish.</p>
           </div>
@@ -194,82 +207,71 @@
       </div>
     </section>
 
-    <!-- ✅ PAINT (UNIFORM, LINE-LOCKED) -->
-     <section class="block section" id="paint">
-  <div class="container wide">
-    <h2 class="big-title reveal">Paint Correction and Polishing</h2>
+    <!-- ===== PAINT CORRECTION (timeline) ===== -->
+<section class="section section-dark" id="paint">
+  <div class="container block reveal">
+    <h2 class="big-title">Paint Correction and Polishing</h2>
 
-    <div class="paint-ditto">
-      <!-- LEFT SIDE (Assessment + Polishing) -->
-      <div class="paint-left">
-        <div class="paint-left-item reveal">
-          <div class="paint-left-title">Assessment</div>
-          <div class="paint-left-desc">
-            Inspect the paint to identify areas of damage and determine the level of correction needed.
-          </div>
+    <div class="paint-simple">
+      <!-- Center vertical line -->
+      <div class="paint-line" aria-hidden="true"></div>
+
+      <!-- STEP 1 (LEFT) -->
+      <div class="paint-step left s1">
+        <div class="paint-content">
+          <h3>Assessment</h3>
+          <p>Inspect the paint to identify areas of damage and determine the level of correction needed.</p>
         </div>
+        <div class="paint-node">1</div>
+      </div>
 
-        <div class="paint-left-item paint-left-item--bottom reveal">
-          <div class="paint-left-title">Polishing</div>
-          <div class="paint-left-desc">
-            Polish the paint to enhance its gloss and shine, leaving a smooth and protective finish.
-          </div>
+      <!-- STEP 2 (RIGHT) -->
+      <div class="paint-step right s2">
+        <div class="paint-node">2</div>
+        <div class="paint-content">
+          <h3>Paint Correction</h3>
+          <p>Using specialized tools and techniques, we remove scratches, swirl marks, and other imperfections.</p>
         </div>
       </div>
 
-      <!-- CENTER TIMELINE -->
-      <div class="paint-mid" aria-hidden="true">
-        <div class="paint-vline"></div>
-
-        <div class="paint-node paint-node-1">1</div>
-        <div class="paint-arm paint-arm-1"></div>
-
-        <div class="paint-node paint-node-2">2</div>
-        <div class="paint-arm paint-arm-2"></div>
-
-        <div class="paint-node paint-node-3">3</div>
-        <div class="paint-arm paint-arm-3"></div>
-      </div>
-
-      <!-- RIGHT SIDE (Paint Correction) -->
-      <div class="paint-right">
-        <div class="paint-right-item reveal">
-          <div class="paint-right-title">Paint Correction</div>
-          <div class="paint-right-desc">
-            Using specialized tools and techniques, we remove scratches, swirl marks, and other imperfections.
-          </div>
+      <!-- STEP 3 (LEFT) -->
+      <div class="paint-step left s3">
+        <div class="paint-content">
+          <h3>Polishing</h3>
+          <p>Polish the paint to enhance its gloss and shine, leaving a smooth and protective finish.</p>
         </div>
+        <div class="paint-node">3</div>
       </div>
     </div>
   </div>
 </section>
 
 
-    <!-- CERAMIC -->
-    <section class="block section" id="ceramic">
-      <div class="container wide">
-        <h2 class="big-title reveal">Ceramic Coating Protection</h2>
+    <!-- ===== CERAMIC PYRAMID ===== -->
+    <section class="section section-dark" id="ceramic">
+      <div class="container block reveal">
+        <h2 class="big-title">Ceramic Coating Protection</h2>
 
         <div class="ceramic-wrap">
-          <div class="pyramid-one reveal" aria-hidden="true">
+          <div class="pyramid-one" aria-hidden="true">
+            <div class="pyr-slice s1"></div>
+            <div class="pyr-slice s2"></div>
+
             <div class="pyr-num num1">1</div>
             <div class="pyr-num num2">2</div>
             <div class="pyr-num num3">3</div>
-
-            <div class="pyr-slice s1"></div>
-            <div class="pyr-slice s2"></div>
           </div>
 
           <div class="ceramic-text">
-            <div class="cer-row reveal">
+            <div class="cer-row">
               <h3>Durability</h3>
               <p>Ceramic coatings offer superior protection against scratches, UV rays, and environmental damage.</p>
             </div>
-            <div class="cer-row reveal">
+            <div class="cer-row">
               <h3>Gloss Enhancement</h3>
               <p>Increases the gloss and shine of your paint, giving it a showroom-quality finish.</p>
             </div>
-            <div class="cer-row reveal">
+            <div class="cer-row">
               <h3>Hydrophobic Properties</h3>
               <p>Repels water, dirt, and debris, making your car easier to clean and maintain.</p>
             </div>
@@ -278,16 +280,23 @@
       </div>
     </section>
 
-    <!-- SCHEDULING + PRICING -->
-    <section class="split-section section" id="schedule">
+    <!-- ===== SCHEDULING + PRICING (Split) ===== -->
+    <section class="split-section section-dark" id="schedule">
       <div class="split-img">
-        <img src="assets/schedule.webp" alt="Workshop" />
+        <img
+          src="assets/schedule.webp"
+          alt="Scheduling image"
+          width="1600"
+          height="1200"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
 
-      <div class="split-body">
-        <h2 class="big-title reveal">Scheduling and Pricing</h2>
+      <div class="split-body reveal" id="pricing">
+        <h2 class="big-title">Scheduling and Pricing</h2>
 
-        <div class="price-table reveal">
+        <div class="price-table">
           <div class="row"><div>Full-Service Detailing</div><div>$300 - $500</div></div>
           <div class="row"><div>Express Detailing</div><div>$75 - $150</div></div>
           <div class="row"><div>Interior Detailing</div><div>$100 - $250</div></div>
@@ -296,14 +305,14 @@
           <div class="row"><div>Ceramic Coating</div><div>$500 - $1000</div></div>
         </div>
 
-        <p class="after-table reveal">Contact us today to schedule your detailing appointment and get a personalized price quote.</p>
+        <p class="after-table">Contact us today to schedule your detailing appointment and get a personalized price quote.</p>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <footer class="footer-block section" id="contact">
-      <div class="container wide">
-        <div class="contact-big reveal">
+    <!-- ===== CONTACT ===== -->
+    <footer class="section section-dark" id="contact">
+      <div class="container footer-block reveal">
+        <div class="contact-big">
           <div class="phone">213-636-3022</div>
           <div class="name">Manny Gomez</div>
         </div>
