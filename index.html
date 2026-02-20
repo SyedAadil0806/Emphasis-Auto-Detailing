@@ -71,7 +71,6 @@
       </div>
 
       <div class="hero-right">
-        <!-- Hero image: eager for LCP -->
         <img
           src="assets/hero.webp"
           alt="Premium car detailing hero image"
@@ -207,74 +206,69 @@
       </div>
     </section>
 
-    <!-- ===== PAINT CORRECTION (timeline) ===== -->
+    <!-- ===== PAINT CORRECTION ===== -->
 
     <!-- MOBILE-ONLY paint layout (keeps PC perfect) -->
-<div class="paint3-mobile reveal">
-  <h2 class="big-title">Paint Correction and Polishing</h2>
-  <div class="paint3m-step">
-    <div class="paint3m-num">1</div>
-    <div class="paint3m-content">
-      <h3 class="paint3m-title">Assessment</h3>
-      <p>Inspect the paint to identify areas of damage and determine the level of correction needed.</p>
-    </div>
-  </div>
-
-  <div class="paint3m-step">
-    <div class="paint3m-num">2</div>
-    <div class="paint3m-content">
-      <h3 class="paint3m-title">Paint Correction</h3>
-      <p>Using specialized tools and techniques, we remove scratches, swirl marks, and other imperfections.</p>
-    </div>
-  </div>
-
-  <div class="paint3m-step">
-    <div class="paint3m-num">3</div>
-    <div class="paint3m-content">
-      <h3 class="paint3m-title">Polishing</h3>
-      <p>Polish the paint to enhance its gloss and shine, leaving a smooth and protective finish.</p>
-    </div>
-  </div>
-</div>
-
-<section class="section section-dark paint-mobile-only" id="paint">
-  <div class="container block reveal">
-    <h2 class="big-title">Paint Correction and Polishing</h2>
-
-    <div class="paint-simple">
-      <!-- Center vertical line -->
-      <div class="paint-line" aria-hidden="true"></div>
-
-      <!-- STEP 1 (LEFT) -->
-      <div class="paint-step left s1">
-        <div class="paint-content">
-          <h3>Assessment</h3>
+    <div class="paint3-mobile reveal">
+      <h2 class="big-title-mobile">Paint Correction and Polishing</h2>
+      <div class="paint3m-step">
+        <div class="paint3m-num">1</div>
+        <div class="paint3m-content">
+          <h3 class="paint3m-title">Assessment</h3>
           <p>Inspect the paint to identify areas of damage and determine the level of correction needed.</p>
         </div>
-        <div class="paint-node">1</div>
       </div>
 
-      <!-- STEP 2 (RIGHT) -->
-      <div class="paint-step right s2">
-        <div class="paint-node">2</div>
-        <div class="paint-content">
-          <h3>Paint Correction</h3>
+      <div class="paint3m-step">
+        <div class="paint3m-num">2</div>
+        <div class="paint3m-content">
+          <h3 class="paint3m-title">Paint Correction</h3>
           <p>Using specialized tools and techniques, we remove scratches, swirl marks, and other imperfections.</p>
         </div>
       </div>
 
-      <!-- STEP 3 (LEFT) -->
-      <div class="paint-step left s3">
-        <div class="paint-content">
-          <h3>Polishing</h3>
+      <div class="paint3m-step">
+        <div class="paint3m-num">3</div>
+        <div class="paint3m-content">
+          <h3 class="paint3m-title">Polishing</h3>
           <p>Polish the paint to enhance its gloss and shine, leaving a smooth and protective finish.</p>
         </div>
-        <div class="paint-node">3</div>
       </div>
     </div>
-  </div>
-</section>
 
+    <section class="section section-dark paint-mobile-only" id="paint">
+      <div class="container block reveal">
+        <h2 class="big-title">Paint Correction and Polishing</h2>
+
+        <div class="paint-simple">
+          <div class="paint-line" aria-hidden="true"></div>
+
+          <div class="paint-step left s1">
+            <div class="paint-content">
+              <h3>Assessment</h3>
+              <p>Inspect the paint to identify areas of damage and determine the level of correction needed.</p>
+            </div>
+            <div class="paint-node">1</div>
+          </div>
+
+          <div class="paint-step right s2">
+            <div class="paint-node">2</div>
+            <div class="paint-content">
+              <h3>Paint Correction</h3>
+              <p>Using specialized tools and techniques, we remove scratches, swirl marks, and other imperfections.</p>
+            </div>
+          </div>
+
+          <div class="paint-step left s3">
+            <div class="paint-content">
+              <h3>Polishing</h3>
+              <p>Polish the paint to enhance its gloss and shine, leaving a smooth and protective finish.</p>
+            </div>
+            <div class="paint-node">3</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- ===== CERAMIC PYRAMID ===== -->
     <section class="section section-dark" id="ceramic">
@@ -325,13 +319,112 @@
       <div class="split-body reveal" id="pricing">
         <h2 class="big-title">Scheduling and Pricing</h2>
 
-        <div class="price-table">
-          <div class="row"><div>Full-Service Detailing</div><div>$300 - $500</div></div>
-          <div class="row"><div>Express Detailing</div><div>$75 - $150</div></div>
-          <div class="row"><div>Interior Detailing</div><div>$100 - $250</div></div>
-          <div class="row"><div>Exterior Detailing</div><div>$150 - $350</div></div>
-          <div class="row"><div>Paint Correction and Polishing</div><div>$200 - $400</div></div>
-          <div class="row"><div>Ceramic Coating</div><div>$500 - $1000</div></div>
+        <!-- ✅ NEW PRICING PACKAGES (3 cards) -->
+        <div class="pricing-packages">
+          <!-- Essential Express -->
+          <article class="package-card reveal">
+            <header class="pkg-head">
+              <h3 class="pkg-title">Essential Express</h3>
+              <p class="pkg-sub">Fast refresh. Clean look. Great value.</p>
+            </header>
+
+            <div class="pkg-prices">
+              <div class="price-pill">
+                <span class="pill-label">Sedan</span>
+                <span class="pill-price">$80</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">SUV</span>
+                <span class="pill-price">$90</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">Truck / Van</span>
+                <span class="pill-price">$100</span>
+              </div>
+            </div>
+
+            <ul class="pkg-list">
+              <li>Full interior vacuum</li>
+              <li>Full interior wipe down</li>
+              <li>Windows inside/outside</li>
+              <li>Exterior wash</li>
+              <li>Spray wax</li>
+              <li>Rim Cleaning</li>
+              <li>Tire Shine</li>
+            </ul>
+          </article>
+
+          <!-- Signature Shine -->
+          <article class="package-card reveal">
+            <header class="pkg-head">
+              <h3 class="pkg-title">Signature Shine</h3>
+              <p class="pkg-sub">Deeper clean + extra comfort details.</p>
+            </header>
+
+            <div class="pkg-prices">
+              <div class="price-pill">
+                <span class="pill-label">Sedan</span>
+                <span class="pill-price">$160</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">SUV</span>
+                <span class="pill-price">$180</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">Truck / Van</span>
+                <span class="pill-price">$200</span>
+              </div>
+            </div>
+
+            <ul class="pkg-list">
+              <li>Full interior Vacuum</li>
+              <li>Full interior wipe down</li>
+              <li>Carpet / seat shampooing</li>
+              <li>Pet Hair Removal</li>
+              <li>Leather Clean + Condition</li>
+              <li>Exterior Wash</li>
+              <li>Spray wax</li>
+              <li>Rim Cleaning</li>
+              <li>Tire Shine</li>
+            </ul>
+          </article>
+
+          <!-- Premier Perfection -->
+          <article class="package-card featured reveal">
+            <header class="pkg-head">
+              <div class="badge">Best Value</div>
+              <h3 class="pkg-title">Premier Perfection</h3>
+              <p class="pkg-sub">Full refresh + protection steps included.</p>
+            </header>
+
+            <div class="pkg-prices">
+              <div class="price-pill">
+                <span class="pill-label">Sedan</span>
+                <span class="pill-price">$260</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">SUV</span>
+                <span class="pill-price">$280</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">Truck / Van</span>
+                <span class="pill-price">$300</span>
+              </div>
+            </div>
+
+            <ul class="pkg-list">
+              <li>Full interior Vacuum</li>
+              <li>Full interior Wipe down</li>
+              <li>Carpet / seat shampooing</li>
+              <li>Pet Hair Removal</li>
+              <li>Leather Clean + Condition</li>
+              <li>Exterior Wash</li>
+              <li>Clay Bar</li>
+              <li>Machine Wax</li>
+              <li>Rim Cleaning</li>
+              <li>Tire Shine</li>
+            </ul>
+          </article>
         </div>
 
         <p class="after-table">Contact us today to schedule your detailing appointment and get a personalized price quote.</p>

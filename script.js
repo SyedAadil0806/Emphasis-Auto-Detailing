@@ -34,24 +34,20 @@ function closeDropdown() {
   dropbtn.setAttribute("aria-expanded", "false");
 }
 
-// Tap/click to toggle (mobile + desktop click support)
 dropbtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (dropdown.classList.contains("open")) closeDropdown();
   else openDropdown();
 });
 
-// Close when clicking outside
 document.addEventListener("click", (e) => {
   if (!dropdown.contains(e.target)) closeDropdown();
 });
 
-// Close on escape
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeDropdown();
 });
 
-// Close after selecting an item + smooth scroll
 menu.querySelectorAll("a").forEach(a => {
   a.addEventListener("click", () => {
     closeDropdown();
@@ -65,7 +61,7 @@ const io = new IntersectionObserver((entries, obs) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("show");
-      obs.unobserve(entry.target); // only once
+      obs.unobserve(entry.target);
     }
   });
 }, { threshold: 0.18 });
