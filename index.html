@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en" class="theme-dark">
 <head>
@@ -6,10 +7,10 @@
   <meta name="description" content="Emphasis Mobile Detailing — premium auto detailing services." />
   <title>Emphasis Mobile Detailing</title>
 
-  <!-- Preload hero image for faster first paint -->
+  <!-- Preload hero background (fast first paint) -->
   <link rel="preload" as="image" href="assets/hero.webp" />
 
-  <!-- Fonts (optional) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -21,27 +22,47 @@
   <!-- ===== Sticky Topbar ===== -->
   <header class="topbar">
     <div class="topbar-inner">
-      <!-- Left: Logo -->
+      <!-- Left: Logo (extreme left) -->
       <a class="brand" href="#top" aria-label="Go to top">
-        <img class="brand-logo" src="assets/logo.webp" alt="Emphasis Mobile Detailing Logo" width="44" height="44" />
+        <img
+          class="brand-logo"
+          src="assets/logo.webp"
+          alt="Emphasis Mobile Detailing Logo"
+          width="56"
+          height="56"
+          decoding="async"
+        />
       </a>
 
-      <!-- Center: Dropdown -->
-      <nav class="nav" aria-label="Primary">
+      <!-- Desktop nav (inline) -->
+      <nav class="nav nav-desktop" aria-label="Primary">
+        <a class="nav-link" href="#welcome">About</a>
+        <a class="nav-link" href="#essential">Essential</a>
+        <a class="nav-link" href="#signature">Signature</a>
+        <a class="nav-link" href="#premier">Premier</a>
+        <a class="nav-link" href="#exterior">Exterior</a>
+        <a class="nav-link" href="#paint">Paint</a>
+        <a class="nav-link" href="#ceramic">Ceramic</a>
+        <a class="nav-link" href="#pricing">Pricing</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <!-- Mobile nav (dropdown allowed) -->
+      <nav class="nav nav-mobile" aria-label="Primary mobile">
         <div class="dropdown" id="servicesDropdown">
           <button class="dropbtn" id="dropbtn" aria-haspopup="true" aria-expanded="false">
             Our Services <span class="chev" aria-hidden="true">▾</span>
           </button>
 
           <div class="dropdown-menu" id="dropdownMenu" role="menu">
-            <a role="menuitem" href="#full-service">Full Service Detailing</a>
-            <a role="menuitem" href="#express">Express Service</a>
-            <a role="menuitem" href="#interior">Interior</a>
+            <a role="menuitem" href="#welcome">About</a>
+            <a role="menuitem" href="#essential">Essential Express</a>
+            <a role="menuitem" href="#signature">Signature Shine</a>
+            <a role="menuitem" href="#premier">Premier Perfection</a>
             <a role="menuitem" href="#exterior">Exterior Detailing</a>
             <a role="menuitem" href="#paint">Paint Correction</a>
-            <a role="menuitem" href="#ceramic">Ceramic Coating Protection</a>
-            <a role="menuitem" href="#schedule">Scheduling</a>
-            <a role="menuitem" href="#pricing">Pricing</a>
+            <a role="menuitem" href="#ceramic">Ceramic Coating</a>
+            <a role="menuitem" href="#pricing">Scheduling & Pricing</a>
             <a role="menuitem" href="#contact">Contact</a>
           </div>
         </div>
@@ -50,63 +71,36 @@
       <!-- Right: Theme + Quote -->
       <div class="actions">
         <button class="theme-btn" id="themeToggle" aria-label="Toggle dark/light theme">
-          <span class="theme-moon" aria-hidden="true">🌙</span>
-          <span class="theme-sun" aria-hidden="true">☀️</span>
+          <span class="theme-moon" aria-hidden="true">☀️</span>
+          <span class="theme-sun" aria-hidden="true">🌙</span>
         </button>
 
-        <button class="quote-btn" type="button">Get a Quote</button>
+        <button class="quote-btn js-quote" type="button">Get a Quote</button>
       </div>
     </div>
   </header>
 
   <!-- ===== HERO ===== -->
   <main id="top">
-    <section class="hero">
-      <div class="hero-left">
+    <section class="hero hero-bg">
+      <div class="hero-inner">
         <div class="hero-copy reveal">
           <h1>Emphasis Auto Detailing:<br/>Restoring Your Vehicle's Shine</h1>
           <p>Get your car looking its best with our comprehensive auto detailing services.</p>
-          <button class="hero-cta" type="button">Get a Quote</button>
-        </div>
-      </div>
 
-      <div class="hero-right">
-        <img
-          src="assets/hero.webp"
-          alt="Premium car detailing hero image"
-          width="1600"
-          height="900"
-          fetchpriority="high"
-          decoding="async"
-        />
-      </div>
-    </section>
-
-    <!-- ===== FULL SERVICE ===== -->
-    <section class="section section-dark" id="full-service">
-      <div class="container block reveal">
-        <h2 class="big-title center">Full-Service Detailing</h2>
-
-        <div class="two-col">
-          <div class="col">
-            <h3>Interior</h3>
-            <p>Thorough cleaning of all surfaces, including carpets, seats, dashboard, and door panels. Stain removal, odor elimination, and vacuuming are included.</p>
-          </div>
-
-          <div class="col">
-            <h3>Exterior</h3>
-            <p>Exterior detailing includes a thorough wash, clay bar treatment, paint correction, and wax or sealant. Wheels are cleaned and tires are dressed.</p>
+          <div class="hero-actions">
+            <button class="hero-cta js-quote" type="button">Get a Quote</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== EXPRESS (Split) ===== -->
-    <section class="split-section section-dark" id="express">
+    <!-- ===== WELCOME (NEW) ===== -->
+    <section class="split-section section-dark" id="welcome">
       <div class="split-img">
         <img
-          src="assets/express.webp"
-          alt="Express detailing image"
+          src="assets/welcome.webp"
+          alt="Emphasis Mobile Detailing welcome image"
           width="1600"
           height="1200"
           loading="lazy"
@@ -115,65 +109,196 @@
       </div>
 
       <div class="split-body reveal">
-        <h2 class="big-title">Express Detailing</h2>
+        <h2 class="big-title">Welcome to Emphasis Mobile Detailing</h2>
 
-        <div class="lav-card">
-          <h3>Interior</h3>
-          <p>Quick vacuuming, dashboard wipe down, and glass cleaning.</p>
-        </div>
+        <div class="prose">
+          <p>We bring the showroom to you. At Emphasis Mobile Detailing, we believe your vehicle deserves premium care without the hassle of leaving home or work. Our fully equipped mobile service delivers professional-grade detailing at your convenience—whether at your driveway, office, or anywhere in between.</p>
 
-        <div class="lav-card">
-          <h3>Exterior</h3>
-          <p>Exterior detailing includes a thorough wash, clay bar treatment, paint correction, and wax or sealant. Wheels are cleaned and tires are dressed.</p>
+          <p>From a quick refresh to a complete showroom restoration, we tailor every detail to your vehicle's needs. With a passion for precision and a commitment to quality, we ensure every inch of your ride looks, feels, and shines its best.</p>
+
+          <p>Emphasis Mobile Detailing – Where Quality Meets Convenience.</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== INTERIOR (Split + Steps) ===== -->
-    <section class="split-section section-dark" id="interior">
-      <div class="split-img">
-        <img
-          src="assets/interior.webp"
-          alt="Interior detailing image"
-          width="1600"
-          height="1200"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+    <!-- ===== PACKAGE 1: Essential Express ===== -->
+    <section class="package-section section-dark" id="essential">
+      <div class="container package-wrap reveal">
+        <div class="pkg-left">
+          <h2 class="big-title">Essential Express</h2>
+          <p class="pkg-lead">“Essential Express – Fast Refresh. Clean Look. Great Value.”</p>
 
-      <div class="split-body reveal">
-        <h2 class="big-title">Interior Detailing</h2>
+          <div class="pkg-desc">
+            <div class="pkg-lines">
+              <h3 class="mini-title">Interior</h3>
+              <p>Full vacuum + wipe down, interior/exterior windows cleaned streak-free.</p>
+            </div>
 
-        <div class="steps">
-          <div class="step-row">
-            <div class="step-badge"><span>1</span></div>
-            <div class="step-copy">
-              <h3>Leather Cleaning and Conditioning</h3>
-              <p>Deep clean and condition your leather seats and upholstery to restore their shine and protect them from future damage.</p>
+            <div class="pkg-lines">
+              <h3 class="mini-title">Exterior</h3>
+              <p>Exterior wash + spray wax, rims cleaned, tires dressed.</p>
             </div>
           </div>
 
-          <div class="step-row">
-            <div class="step-badge"><span>2</span></div>
-            <div class="step-copy">
-              <h3>Fabric Cleaning and Stain Removal</h3>
-              <p>Remove stains and dirt from your fabric seats and carpets using a specialized cleaning solution and a professional extractor.</p>
-            </div>
-          </div>
+          <article class="package-card pricing-card">
+            <header class="pkg-head">
+              <h3 class="pkg-title">Pricing</h3>
+              <p class="pkg-sub">Choose your vehicle type.</p>
+            </header>
 
-          <div class="step-row">
-            <div class="step-badge"><span>3</span></div>
-            <div class="step-copy">
-              <h3>Odor Removal</h3>
-              <p>Eliminate unpleasant odors from your car’s interior using a professional ozone machine or deodorizing treatments.</p>
+            <div class="pkg-prices">
+              <div class="price-pill">
+                <span class="pill-label">Sedan</span>
+                <span class="pill-price">$80</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">SUV</span>
+                <span class="pill-price">$90</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">Truck / Van</span>
+                <span class="pill-price">$100</span>
+              </div>
             </div>
-          </div>
+
+            <ul class="pkg-list">
+              <li>Full interior vacuum</li>
+              <li>Full interior wipe down</li>
+              <li>Windows inside/outside</li>
+              <li>Exterior wash</li>
+              <li>Spray wax</li>
+              <li>Rim Cleaning</li>
+              <li>Tire Shine</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pkg-right">
+          <img
+            src="assets/essential.webp"
+            alt="Essential Express detailing package"
+            width="1600"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </section>
 
-    <!-- ===== EXTERIOR GRID ===== -->
+    <!-- ===== PACKAGE 2: Signature Shine (image LEFT, content RIGHT) ===== -->
+    <section class="package-section section-dark" id="signature">
+      <div class="container package-wrap package-reverse reveal">
+        <div class="pkg-right">
+          <img
+            src="assets/signature.webp"
+            alt="Signature Shine detailing package"
+            width="1600"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="pkg-left">
+          <h2 class="big-title">Signature Shine</h2>
+          <p class="pkg-lead">Deep clean + lasting protection — designed to bring comfort back into your cabin and keep your exterior looking sharp.</p>
+
+          <article class="package-card pricing-card">
+            <header class="pkg-head">
+              <h3 class="pkg-title">Pricing</h3>
+              <p class="pkg-sub">Elevated interior care + exterior refresh.</p>
+            </header>
+
+            <div class="pkg-prices">
+              <div class="price-pill">
+                <span class="pill-label">Sedan</span>
+                <span class="pill-price">$160</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">SUV</span>
+                <span class="pill-price">$180</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">Truck / Van</span>
+                <span class="pill-price">$200</span>
+              </div>
+            </div>
+
+            <ul class="pkg-list">
+              <li>Full interior Vacuum</li>
+              <li>Full interior wipe down</li>
+              <li>Carpet / seat shampooing</li>
+              <li>Pet Hair Removal</li>
+              <li>Leather Clean + Condition</li>
+              <li>Exterior Wash</li>
+              <li>Spray wax</li>
+              <li>Rim Cleaning</li>
+              <li>Tire Shine</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PACKAGE 3: Premier Perfection ===== -->
+    <section class="package-section section-dark" id="premier">
+      <div class="container package-wrap reveal">
+        <div class="pkg-left">
+          <h2 class="big-title">Premier Perfection</h2>
+          <p class="pkg-lead">Ultimate showroom finish — for drivers who want the full transformation with premium protection steps included.</p>
+
+          <article class="package-card featured pricing-card">
+            <header class="pkg-head">
+              <div class="badge badge-float">Best Value</div>
+              <h3 class="pkg-title">Pricing</h3>
+              <p class="pkg-sub">Maximum shine + protection.</p>
+            </header>
+
+            <div class="pkg-prices">
+              <div class="price-pill">
+                <span class="pill-label">Sedan</span>
+                <span class="pill-price">$260</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">SUV</span>
+                <span class="pill-price">$280</span>
+              </div>
+              <div class="price-pill">
+                <span class="pill-label">Truck / Van</span>
+                <span class="pill-price">$300</span>
+              </div>
+            </div>
+
+            <ul class="pkg-list">
+              <li>Full interior Vacuum</li>
+              <li>Full interior Wipe down</li>
+              <li>Carpet / seat shampooing</li>
+              <li>Pet Hair Removal</li>
+              <li>Leather Clean + Condition</li>
+              <li>Exterior Wash</li>
+              <li>Clay Bar</li>
+              <li>Machine Wax</li>
+              <li>Rim Cleaning</li>
+              <li>Tire Shine</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="pkg-right">
+          <img
+            src="assets/premier.webp"
+            alt="Premier Perfection detailing package"
+            width="1600"
+            height="1200"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXTERIOR GRID (keep) ===== -->
     <section class="section section-dark" id="exterior">
       <div class="container block reveal">
         <h2 class="big-title">Exterior Detailing</h2>
@@ -206,71 +331,74 @@
       </div>
     </section>
 
-    <!-- ===== PAINT CORRECTION ===== -->
-
-    <!-- MOBILE-ONLY paint layout (keeps PC perfect) -->
-    <div class="paint3-mobile reveal">
-      <h2 class="big-title-mobile">Paint Correction and Polishing</h2>
-      <div class="paint3m-step">
-        <div class="paint3m-num">1</div>
-        <div class="paint3m-content">
-          <h3 class="paint3m-title">Assessment</h3>
-          <p>Inspect the paint to identify areas of damage and determine the level of correction needed.</p>
-        </div>
-      </div>
-
-      <div class="paint3m-step">
-        <div class="paint3m-num">2</div>
-        <div class="paint3m-content">
-          <h3 class="paint3m-title">Paint Correction</h3>
-          <p>Using specialized tools and techniques, we remove scratches, swirl marks, and other imperfections.</p>
-        </div>
-      </div>
-
-      <div class="paint3m-step">
-        <div class="paint3m-num">3</div>
-        <div class="paint3m-content">
-          <h3 class="paint3m-title">Polishing</h3>
-          <p>Polish the paint to enhance its gloss and shine, leaving a smooth and protective finish.</p>
-        </div>
-      </div>
-    </div>
-
-    <section class="section section-dark paint-mobile-only" id="paint">
+    <!-- ===== PAINT CORRECTION and POLISHING (desktop timeline + mobile card list; NO duplicates) ===== -->
+    <section class="section section-dark" id="paint">
       <div class="container block reveal">
         <h2 class="big-title">Paint Correction and Polishing</h2>
 
-        <div class="paint-simple">
-          <div class="paint-line" aria-hidden="true"></div>
+        <!-- Desktop timeline (only shows on desktop) -->
+        <div class="paint-desktop">
+          <div class="paint-simple">
+            <div class="paint-line" aria-hidden="true"></div>
 
-          <div class="paint-step left s1">
-            <div class="paint-content">
-              <h3>Assessment</h3>
+            <div class="paint-step left s1">
+              <div class="paint-content">
+                <h3>Assessment</h3>
+                <p>Inspect the paint to identify areas of damage and determine the level of correction needed.</p>
+              </div>
+              <div class="paint-node">1</div>
+            </div>
+
+            <div class="paint-step right s2">
+              <div class="paint-node">2</div>
+              <div class="paint-content">
+                <h3>Paint Correction</h3>
+                <p>Using specialized tools and techniques, we remove scratches, swirl marks, and other imperfections.</p>
+              </div>
+            </div>
+
+            <div class="paint-step left s3">
+              <div class="paint-content">
+                <h3>Polishing</h3>
+                <p>Polish the paint to enhance its gloss and shine, leaving a smooth and protective finish.</p>
+              </div>
+              <div class="paint-node">3</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile card list (only shows on mobile) -->
+        <div class="paint-mobile">
+          <h2 class="big-title-mobile">Paint Correction and Polishing</h2>
+
+          <div class="paint3m-step">
+            <div class="paint3m-num">1</div>
+            <div class="paint3m-content">
+              <h3 class="paint3m-title">Assessment</h3>
               <p>Inspect the paint to identify areas of damage and determine the level of correction needed.</p>
             </div>
-            <div class="paint-node">1</div>
           </div>
 
-          <div class="paint-step right s2">
-            <div class="paint-node">2</div>
-            <div class="paint-content">
-              <h3>Paint Correction</h3>
+          <div class="paint3m-step">
+            <div class="paint3m-num">2</div>
+            <div class="paint3m-content">
+              <h3 class="paint3m-title">Paint Correction</h3>
               <p>Using specialized tools and techniques, we remove scratches, swirl marks, and other imperfections.</p>
             </div>
           </div>
 
-          <div class="paint-step left s3">
-            <div class="paint-content">
-              <h3>Polishing</h3>
+          <div class="paint3m-step">
+            <div class="paint3m-num">3</div>
+            <div class="paint3m-content">
+              <h3 class="paint3m-title">Polishing</h3>
               <p>Polish the paint to enhance its gloss and shine, leaving a smooth and protective finish.</p>
             </div>
-            <div class="paint-node">3</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== CERAMIC PYRAMID ===== -->
+    <!-- ===== CERAMIC PYRAMID (keep) ===== -->
     <section class="section section-dark" id="ceramic">
       <div class="container block reveal">
         <h2 class="big-title">Ceramic Coating Protection</h2>
@@ -303,26 +431,14 @@
       </div>
     </section>
 
-    <!-- ===== SCHEDULING + PRICING (Split) ===== -->
-    <section class="split-section section-dark" id="schedule">
-      <div class="split-img">
-        <img
-          src="assets/schedule.webp"
-          alt="Scheduling image"
-          width="1600"
-          height="1200"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-
-      <div class="split-body reveal" id="pricing">
+    <!-- ===== SCHEDULING & PRICING (no image; aligned 3 cards) ===== -->
+    <section class="section section-dark" id="pricing">
+      <div class="container block reveal">
         <h2 class="big-title">Scheduling and Pricing</h2>
 
-        <!-- ✅ NEW PRICING PACKAGES (3 cards) -->
-        <div class="pricing-packages">
+        <div class="pricing-grid">
           <!-- Essential Express -->
-          <article class="package-card reveal">
+          <article class="package-card pricing-tile">
             <header class="pkg-head">
               <h3 class="pkg-title">Essential Express</h3>
               <p class="pkg-sub">Fast refresh. Clean look. Great value.</p>
@@ -355,10 +471,10 @@
           </article>
 
           <!-- Signature Shine -->
-          <article class="package-card reveal">
+          <article class="package-card pricing-tile">
             <header class="pkg-head">
               <h3 class="pkg-title">Signature Shine</h3>
-              <p class="pkg-sub">Deeper clean + extra comfort details.</p>
+              <p class="pkg-sub">Deep clean + lasting protection.</p>
             </header>
 
             <div class="pkg-prices">
@@ -390,11 +506,11 @@
           </article>
 
           <!-- Premier Perfection -->
-          <article class="package-card featured reveal">
+          <article class="package-card featured pricing-tile">
             <header class="pkg-head">
-              <div class="badge">Best Value</div>
+              <div class="badge badge-float">Best Value</div>
               <h3 class="pkg-title">Premier Perfection</h3>
-              <p class="pkg-sub">Full refresh + protection steps included.</p>
+              <p class="pkg-sub">Ultimate showroom finish.</p>
             </header>
 
             <div class="pkg-prices">
