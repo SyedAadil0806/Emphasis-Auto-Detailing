@@ -11,18 +11,15 @@ function setTheme(theme) {
 }
 
 const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "theme-light" || savedTheme === "theme-dark") {
-  setTheme(savedTheme);
-} else {
-  setTheme("theme-dark"); // default
-}
+if (savedTheme === "theme-light" || savedTheme === "theme-dark") setTheme(savedTheme);
+else setTheme("theme-dark");
 
 toggleBtn?.addEventListener("click", () => {
   const next = root.classList.contains("theme-dark") ? "theme-light" : "theme-dark";
   setTheme(next);
 });
 
-// ---------- Mobile Dropdown (only exists on mobile nav) ----------
+// ---------- Mobile Dropdown ----------
 const dropdown = document.getElementById("servicesDropdown");
 const dropbtn = document.getElementById("dropbtn");
 const menu = document.getElementById("dropdownMenu");
@@ -60,9 +57,7 @@ document.addEventListener("keydown", (e) => {
 
 // close on selection
 menu?.querySelectorAll("a").forEach((a) => {
-  a.addEventListener("click", () => {
-    closeDropdown();
-  });
+  a.addEventListener("click", () => closeDropdown());
 });
 
 // ---------- Quote buttons: scroll to pricing ----------
