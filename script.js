@@ -11,8 +11,11 @@ function setTheme(theme) {
 }
 
 const savedTheme = localStorage.getItem("theme");
-if (savedTheme === "theme-light" || savedTheme === "theme-dark") setTheme(savedTheme);
-else setTheme("theme-dark");
+if (savedTheme === "theme-light" || savedTheme === "theme-dark") {
+  setTheme(savedTheme);
+} else {
+  setTheme("theme-dark"); // default
+}
 
 toggleBtn?.addEventListener("click", () => {
   const next = root.classList.contains("theme-dark") ? "theme-light" : "theme-dark";
@@ -29,11 +32,13 @@ function openDropdown() {
   dropdown.classList.add("open");
   dropbtn.setAttribute("aria-expanded", "true");
 }
+
 function closeDropdown() {
   if (!dropdown || !dropbtn) return;
   dropdown.classList.remove("open");
   dropbtn.setAttribute("aria-expanded", "false");
 }
+
 function isDropdownOpen() {
   return dropdown?.classList.contains("open");
 }
@@ -57,17 +62,57 @@ document.addEventListener("keydown", (e) => {
 
 // close on selection
 menu?.querySelectorAll("a").forEach((a) => {
-  a.addEventListener("click", () => closeDropdown());
-});
-
-// ---------- Quote buttons: scroll to pricing ----------
-document.querySelectorAll(".js-quote").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const el = document.getElementById("pricing");
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  a.addEventListener("click", () => {
     closeDropdown();
   });
+});
+
+// ---------- Quote buttons: scroll to GET A QUOTE form ----------
+function goToQuoteForm() {
+  const section = document.getElementById("contact");
+  const firstInput = document.getElementById("qName");
+
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  // Focus after scroll (small delay)
+  window.setTimeout(() => {
+    firstInput?.focus({ preventScroll: true });
+  }, 450);
+
+  closeDropdown();
+}
+
+document.querySelectorAll(".js-quote").forEach((btn) => {
+  btn.addEventListener("click", goToQuoteForm);
+});
+
+// ---------- Quote form (temporary - until email sending is connected) ----------
+const quoteForm = document.getElementById("quoteForm");
+const formNote = document.getElementById("formNote");
+
+quoteForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("qName")?.value?.trim();
+  const phone = document.getElementById("qPhone")?.value?.trim();
+  const email = document.getElementById("qEmail")?.value?.trim();
+  const vehicle = document.getElementById("qVehicle")?.value?.trim();
+  const pkg = document.getElementById("qPackage")?.value?.trim();
+  const msg = document.getElementById("qMessage")?.value?.trim();
+
+  if (!name || !phone || !email || !vehicle || !pkg || !msg) {
+    if (formNote) formNote.textContent = "Please fill in all fields before submitting.";
+    return;
+  }
+
+  if (formNote) {
+    formNote.textContent =
+      "Saved! Next step: connect this form to email (Netlify Forms / EmailJS / Formspree).";
+  }
+
+  quoteForm.reset();
 });
 
 // ---------- Reveal animation (once) ----------
